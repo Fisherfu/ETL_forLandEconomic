@@ -30,6 +30,14 @@ for x in range(101,111):
       
 # 4. set the download file 
               open(r'lvr_landcsv'+str(x)+str(y)+'.zip', "wb").write(response.content)
+        
+
+              
+# 5. extract data 
+for i in range(101,111):
+        for j in range(1,5):
+              with zipfile.ZipFile('lvr_landcsv'+str(i)+str(j)+'.zip', 'r') as zip_ref:
+                  zip_ref.extractall('lvr_landcsv'+str(i)+str(j)+'temp')        
               
               
 
