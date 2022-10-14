@@ -39,6 +39,29 @@ for i in range(101,111):
               with zipfile.ZipFile('lvr_landcsv'+str(i)+str(j)+'.zip', 'r') as zip_ref:
                   zip_ref.extractall('lvr_landcsv'+str(i)+str(j)+'temp')        
               
-              
+
+
+        
+# 6. import all csv and combine into one table via pandas
+
+list_panda_res = []
+
+for i in range(102,111):
+        for j in range(1,5):
+
+            path="C:/Users/fisherfu/OneDrive - Synopsys, Inc/Desktop/python/LabforHousing/lvr_landcsv"+str(i)+str(j)+"temp"
+    
+            os.chdir(path)
+    
+            key=pandas.read_csv("a_lvr_land_a.csv")   
+            list_panda_res.append(key) 
+            dF1=pandas.concat(list_panda_res)
+
+            
+## 7. save as csv 
+
+os.chdir("C:/Users/fisherfu/OneDrive - Synopsys, Inc/Desktop/python/LabforHousing")
+dF1.to_csv("Housingprices_concat.csv",index=False,encoding="utf-8-sig")  
+
 
               
