@@ -51,7 +51,7 @@ list_panda_res = []
 for i in range(102,111):
         for j in range(1,5):
 
-            path="C:/Users/fisherfu/OneDrive - Synopsys, Inc/Desktop/python/LabforHousing/lvr_landcsv"+str(i)+str(j)+"temp"
+            path="C:/Users/fisherfu/LabforHousing/lvr_landcsv"+str(i)+str(j)+"temp"
     
             os.chdir(path)
     
@@ -62,7 +62,7 @@ for i in range(102,111):
             
 ## 7. save as csv 
 
-os.chdir("C:/Users/fisherfu/OneDrive - Synopsys, Inc/Desktop/python/LabforHousing")
+os.chdir("C:/Users/fisherfu/LabforHousing")
 dF1.to_csv("Housingprices_concat.csv",index=False,encoding="utf-8-sig")  
 
 
